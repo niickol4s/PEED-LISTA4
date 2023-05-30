@@ -4,8 +4,6 @@ from fila import Fila
 fila = Fila()
 while True:
     
-    valoresFila = []
-    
     print('Escolha uma opção:')
     print('1 - Adicionar;')
     print('2 - Remover;')
@@ -19,11 +17,15 @@ while True:
         case 2:
             valor = int(input('Valor: '))
             
-            if valor in valoresFila:
+            if valor in fila:
                 fila.dequeue(valor)
-            else:
-                print('Valor não encontrado.')
+        
+            print('Valor não encontrado.')
         case 3:
+            
+            if fila.isEmpty():
+                print('Fila vazia.')
+            
             fila.peek()
         case 4:
             print('Programa encerrado.')
