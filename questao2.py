@@ -11,8 +11,9 @@ while True:
     print('Escolha uma opção:')
     print('1 - Adicionar;')
     print('2 - Remover;')
-    print('3 - Mostrar;')
-    print('4 - Sair')
+    print('3 - Tamanho;')
+    print('4 - Mostrar;')
+    print('0 - Sair')
     opcao = int(input('Opção: '))
     
     match opcao:
@@ -23,8 +24,12 @@ while True:
         case 3:
             if fila.isEmpty():
                 print('Fila vazia.')
-            fila.mostrar()
+            print(f'Tamanho: {fila.size}')
         case 4:
+            if fila.isEmpty():
+                print('Fila vazia.')
+            fila.mostrar()
+        case 0:
             print('Programa encerrado.')
             break
         case _:
