@@ -8,4 +8,24 @@ from fila import Fila
 
 fila = Fila()
 
-for i in range()
+def verificarpolindromo(frs):
+    
+    aux = []
+    string = ''
+    
+    for i in frs:
+        fila.enqueue(i)
+    while not fila.isEmpty():
+        aux.append(fila.dequeue())
+    aux.reverse()
+    for i in aux:
+        fila.enqueue(i)
+    while not fila.isEmpty():
+        string += fila.dequeue()
+    if string == frs:
+        return True
+    else:
+        return False
+    
+frase = input('Frase: ')
+print(verificarpolindromo(frase))
